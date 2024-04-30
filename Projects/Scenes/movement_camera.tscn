@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://btrfdcvocw8s5"]
+
+[ext_resource type="Script" path="res://Scripts/movement_camera.cs" id="1_7ouv1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_htbpm"]
+
+[node name="CameraBody" type="CharacterBody3D"]
+script = ExtResource("1_7ouv1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 1.03316e-07, 0, 1, 0, -1.03316e-07, 0, 1, 0, 0, 0)
+current = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_htbpm")

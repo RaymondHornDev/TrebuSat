@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsajm0a8471ya"]
+
+[ext_resource type="Script" path="res://Scripts/capsule.cs" id="1_dhpon"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_87olb"]
+top_radius = 0.0
+bottom_radius = 0.9
+height = 1.0
+
+[node name="Capsule" type="Node3D"]
+script = ExtResource("1_dhpon")
+
+[node name="Capsule" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.844685, 0)
+mesh = SubResource("CylinderMesh_87olb")

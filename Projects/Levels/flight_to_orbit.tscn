@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://b32vtkipc5l2x"]
+
+[ext_resource type="Script" path="res://Scripts/FlightToOrbit.cs" id="1_ostg2"]
+[ext_resource type="PackedScene" uid="uid://dkbbm1brj53tu" path="res://Scenes/ring.tscn" id="2_281n3"]
+[ext_resource type="PackedScene" uid="uid://77hb8f68tswc" path="res://Scenes/marker.tscn" id="3_3oole"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_upbjc"]
+
+[sub_resource type="Environment" id="Environment_wgfcb"]
+background_mode = 1
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="FlightToOrbit" type="Node3D"]
+script = ExtResource("1_ostg2")
+
+[node name="PlanetaryBody" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 18.25, 0, -17.75)
+mesh = SubResource("SphereMesh_upbjc")
+
+[node name="MeshInstance3D" parent="PlanetaryBody" instance=ExtResource("2_281n3")]
+transform = Transform3D(1.3523, 0, -0.258819, 0, -0.1, 0, 0.362346, 0, 0.965926, 0.87625, 0, 0)
+visible = false
+
+[node name="LaunchPath" type="Node3D" parent="."]
+
+[node name="SpawnPoint" parent="LaunchPath" instance=ExtResource("3_3oole")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.625, 0, 18.875)
+
+[node name="Marker2" parent="LaunchPath" groups=["LaunchMarkers"] instance=ExtResource("3_3oole")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 32)
+
+[node name="Marker3" parent="LaunchPath" groups=["LaunchMarkers"] instance=ExtResource("3_3oole")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 48.125)
+
+[node name="Marker4" parent="LaunchPath" groups=["LaunchMarkers"] instance=ExtResource("3_3oole")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.75, 0, 64)
+
+[node name="Marker5" parent="LaunchPath" groups=["LaunchMarkers"] instance=ExtResource("3_3oole")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.625, 0, 80.125)
+
+[node name="RayCast3D" type="RayCast3D" parent="LaunchPath/Marker5"]
+transform = Transform3D(-4.2222e-08, 0.965926, -0.258819, -1, -4.37114e-08, 0, -1.13133e-08, 0.258819, 0.965926, 0, 0, 0)
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0, 0, 89.375)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wgfcb")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 167)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkbbm1brj53tu"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_488qj"]
+inner_radius = 1.04
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D(1.3523, 0, -0.258819, 0, 1, 0, 0.362347, 0, 0.965926, 0.87625, 0, 0)
+mesh = SubResource("TorusMesh_488qj")

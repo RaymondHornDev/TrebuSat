@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl5o0kwedu5t3"]
+
+[ext_resource type="PackedScene" uid="uid://dvdlsj7jedgip" path="res://Scenes/flame.tscn" id="1_qx1or"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_l7v5g"]
+top_radius = 0.0
+
+[node name="RocketEngine" type="CSGMesh3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.25, 0, 0, 0, 0.8, 0, -1, 0)
+mesh = SubResource("CylinderMesh_l7v5g")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0983588, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_l7v5g")
+
+[node name="Flame" parent="." instance=ExtResource("1_qx1or")]
+transform = Transform3D(1, 0, 0, 0, -3, 1.50996e-07, 0, -4.52987e-07, -1, 0, -3, 0)

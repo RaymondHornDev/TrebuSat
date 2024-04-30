@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://w3ffmxv684lw"]
+
+[ext_resource type="Script" path="res://Scripts/StartMenu.cs" id="1_mb2ea"]
+[ext_resource type="Texture2D" uid="uid://356kmf3drj18" path="res://icon.svg" id="2_2pja6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rtmbs"]
+texture = ExtResource("2_2pja6")
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mb2ea")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SMPanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -53.0
+offset_right = 148.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/SMPanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SMPanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="StartLabel" type="Label" parent="CanvasLayer/SMPanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "This is a Label"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/SMPanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "This is a button"
+icon_alignment = 1
+
+[node name="IMPanelContainer" type="PanelContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -161.0
+offset_right = 332.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_rtmbs")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/IMPanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/IMPanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="INFOLabel" type="Label" parent="CanvasLayer/IMPanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Place holder"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters_behavior = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/IMPanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "This is a button"
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[connection signal="pressed" from="CanvasLayer/SMPanelContainer/MarginContainer/VBoxContainer/Button" to="." method="OnButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/IMPanelContainer/MarginContainer/VBoxContainer/Button" to="." method="OnInfoButtonPressed"]

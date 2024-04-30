@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3 uid="uid://b2dqiw4fijl16"]
+
+[ext_resource type="PackedScene" uid="uid://832rkxkrp1dd" path="res://Scenes/launch_platfom.tscn" id="1_3q4eb"]
+[ext_resource type="Script" path="res://Scripts/launch_level.cs" id="1_uyhj6"]
+[ext_resource type="PackedScene" uid="uid://cmokgwxs5ibpw" path="res://Scenes/water.tscn" id="2_ccv3m"]
+[ext_resource type="PackedScene" uid="uid://dn4adoj6ejemv" path="res://Scenes/rocket_base.tscn" id="3_w03us"]
+[ext_resource type="PackedScene" uid="uid://77hb8f68tswc" path="res://Scenes/marker.tscn" id="5_mkthq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_443ut"]
+
+[sub_resource type="Sky" id="Sky_aqblg"]
+sky_material = SubResource("ProceduralSkyMaterial_443ut")
+
+[sub_resource type="Environment" id="Environment_qk6ik"]
+background_mode = 2
+sky = SubResource("Sky_aqblg")
+ambient_light_source = 3
+ambient_light_color = Color(0.431373, 0.466667, 0.772549, 0.909804)
+tonemap_mode = 2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0105
+volumetric_fog_albedo = Color(0.666667, 0.870588, 0.85098, 1)
+volumetric_fog_length = 42.44
+volumetric_fog_detail_spread = 6.0
+
+[node name="LaunchLevel" type="Node3D"]
+script = ExtResource("1_uyhj6")
+
+[node name="LaunchPlatfom" parent="." instance=ExtResource("1_3q4eb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -2, 4)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qk6ik")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 8, 0)
+
+[node name="Water" parent="." instance=ExtResource("2_ccv3m")]
+
+[node name="RocketBase" parent="." instance=ExtResource("3_w03us")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 3, 7)
+
+[node name="WayPoints" type="Node3D" parent="."]
+
+[node name="Marker" parent="WayPoints" instance=ExtResource("5_mkthq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+
+[node name="Marker2" parent="WayPoints" instance=ExtResource("5_mkthq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 0)
+LocalIndex = 1
+
+[node name="Marker3" parent="WayPoints" instance=ExtResource("5_mkthq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
+LocalIndex = 2
+
+[node name="Marker4" parent="WayPoints" instance=ExtResource("5_mkthq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+LocalIndex = 3
+
+[node name="Marker5" parent="WayPoints" instance=ExtResource("5_mkthq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, 0)
+LocalIndex = 4
+
+[node name="Marker6" parent="WayPoints" instance=ExtResource("5_mkthq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28, 0)
+LocalIndex = 5
+
+[node name="Marker7" parent="WayPoints" instance=ExtResource("5_mkthq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32, 0)
+LocalIndex = 6
+
+[node name="Marker8" parent="WayPoints" instance=ExtResource("5_mkthq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36, 0)
+LocalIndex = 7
+
+[node name="Marker9" parent="WayPoints" instance=ExtResource("5_mkthq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 40, 0)
+LocalIndex = 8
+
+[node name="RayCast3D" type="RayCast3D" parent="WayPoints/Marker9"]
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true

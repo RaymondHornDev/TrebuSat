@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://dn4adoj6ejemv"]
+
+[ext_resource type="PackedScene" uid="uid://cl5o0kwedu5t3" path="res://Scenes/RocketEngine.tscn" id="1_e0aph"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hkc2t"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qjkls"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7m324"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8p5aj"]
+
+[node name="RocketBase" type="StaticBody3D"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="LowerBodyAssembly" type="Node3D" parent="."]
+
+[node name="LowerBody" type="CSGMesh3D" parent="LowerBodyAssembly"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+collision_layer = 3
+collision_mask = 3
+mesh = SubResource("CylinderMesh_hkc2t")
+
+[node name="CSGMesh3D" parent="LowerBodyAssembly/LowerBody" instance=ExtResource("1_e0aph")]
+layers = 3
+
+[node name="RocketFeet" type="Node3D" parent="."]
+
+[node name="EngineHeatShield" type="MeshInstance3D" parent="RocketFeet"]
+transform = Transform3D(1.32, 0, 0, 0, 0.04, 0, 0, 0, 1.4, 0, 0, 0)
+mesh = SubResource("CylinderMesh_qjkls")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RocketFeet"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 1.7, -0.625, 0, 0)
+mesh = SubResource("BoxMesh_7m324")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="RocketFeet"]
+transform = Transform3D(0.0996199, 0, 0, 0, 0.0996199, 0, 0, 0, 1.69354, 0.622625, -0.00249416, -0.000593841)
+mesh = SubResource("BoxMesh_7m324")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="RocketFeet"]
+transform = Transform3D(0.0996199, 0, 0, 0, -4.35452e-09, 1.01612, 0, -0.0996199, -4.44162e-08, -0.622625, -0.499252, -0.623218)
+mesh = SubResource("BoxMesh_7m324")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="RocketFeet"]
+transform = Transform3D(0.0996199, 0, 0, 0, -4.35452e-09, 1.01612, 0, -0.0996199, -4.44162e-08, 0.622625, -0.499252, -0.623218)
+mesh = SubResource("BoxMesh_7m324")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="RocketFeet"]
+transform = Transform3D(0.0996199, 0, 0, 0, -4.35452e-09, 1.01612, 0, -0.0996199, -4.44162e-08, -0.622625, -0.499252, 0.622031)
+mesh = SubResource("BoxMesh_7m324")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="RocketFeet"]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, 1.02, 0, -0.1, -4.45856e-08, 0.625, -0.499751, 0.625)
+mesh = SubResource("BoxMesh_7m324")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="RocketFeet"]
+transform = Transform3D(-4.37114e-09, 0, -1.7, 0, 0.1, 0, 0.1, 0, -7.43094e-08, 2.73196e-08, 0, -0.625)
+mesh = SubResource("BoxMesh_7m324")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="RocketFeet"]
+transform = Transform3D(-4.37114e-09, 0, -1.7, 0, 0.1, 0, 0.1, 0, -7.43094e-08, -2.73196e-08, 0, 0.625)
+mesh = SubResource("BoxMesh_7m324")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0.75, 0)
+shape = SubResource("CylinderShape3D_8p5aj")

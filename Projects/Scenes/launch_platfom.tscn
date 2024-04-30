@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://832rkxkrp1dd"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0n640"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lx35h"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8y46b"]
+
+[node name="LaunchPlatfom" type="Node3D"]
+
+[node name="Floats" type="Node3D" parent="."]
+
+[node name="1stFloat" type="MeshInstance3D" parent="Floats"]
+transform = Transform3D(-4.37114e-08, -4.1, 0, 1, -1.79217e-07, 0, 0, 0, 1, 4, 0, 0)
+mesh = SubResource("CylinderMesh_0n640")
+skeleton = NodePath("../..")
+
+[node name="2ndFloat" type="MeshInstance3D" parent="Floats"]
+transform = Transform3D(-4.37114e-08, -4.1, 0, 1, -1.79217e-07, 0, 0, 0, 1, 4, 0, -8)
+mesh = SubResource("CylinderMesh_0n640")
+skeleton = NodePath("../..")
+
+[node name="3rdFloat" type="MeshInstance3D" parent="Floats"]
+transform = Transform3D(1, 0, 0, 0, -2.01947e-07, 1, 0, -4.62, -4.37114e-08, 8, 0, -4)
+mesh = SubResource("CylinderMesh_0n640")
+skeleton = NodePath("../..")
+
+[node name="4thFloat" type="MeshInstance3D" parent="Floats"]
+transform = Transform3D(1, 0, 0, 0, -2.01947e-07, 1, 0, -4.62, -4.37114e-08, 0, 0, -4)
+mesh = SubResource("CylinderMesh_0n640")
+skeleton = NodePath("../..")
+
+[node name="Risers" type="Node3D" parent="."]
+
+[node name="1stRiser" type="MeshInstance3D" parent="Risers"]
+transform = Transform3D(1, 0, 0, 0, 2.002, 0, 0, 0, 1, 0, 2, 0)
+mesh = SubResource("CylinderMesh_lx35h")
+
+[node name="2ndRiser" type="MeshInstance3D" parent="Risers"]
+transform = Transform3D(1, 0, 0, 0, 2.002, 0, 0, 0, 1, 0, 2, -8)
+mesh = SubResource("CylinderMesh_lx35h")
+
+[node name="3rdRiser" type="MeshInstance3D" parent="Risers"]
+transform = Transform3D(1, 0, 0, 0, 2.002, 0, 0, 0, 1, 8, 2, -8)
+mesh = SubResource("CylinderMesh_lx35h")
+
+[node name="4thRiser" type="MeshInstance3D" parent="Risers"]
+transform = Transform3D(1, 0, 0, 0, 2.002, 0, 0, 0, 1, 8, 2, 0)
+mesh = SubResource("CylinderMesh_lx35h")
+
+[node name="Platform" type="Node3D" parent="."]
+transform = Transform3D(0.999187, 0, 0, 0, 0.999187, 0, 0, 0, 0.999187, 0, 0, 0)
+
+[node name="Platfom" type="MeshInstance3D" parent="Platform"]
+transform = Transform3D(9.4248, 0, 0, 0, 0.28, 0, 0, 0, 9.801, 4, 4, -4)
+mesh = SubResource("BoxMesh_8y46b")

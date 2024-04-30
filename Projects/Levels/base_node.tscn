@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bp23e0685kul2"]
+
+[ext_resource type="Script" path="res://Scripts/SceneBase.cs" id="1_y5asv"]
+[ext_resource type="Script" path="res://Scripts/PlayerBase.cs" id="2_82gpi"]
+[ext_resource type="PackedScene" uid="uid://w3ffmxv684lw" path="res://Scenes/start_menu.tscn" id="2_fpw1x"]
+[ext_resource type="Script" path="res://Scripts/MenuBase.cs" id="2_sn5lp"]
+
+[node name="BaseNode" type="Node"]
+
+[node name="PlayerBase" type="Node" parent="."]
+script = ExtResource("2_82gpi")
+
+[node name="SceneBase" type="Node" parent="."]
+script = ExtResource("1_y5asv")
+
+[node name="MenuBase" type="Node" parent="."]
+script = ExtResource("2_sn5lp")
+
+[node name="StartMenu" parent="MenuBase" instance=ExtResource("2_fpw1x")]

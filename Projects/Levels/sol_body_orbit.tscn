@@ -1,0 +1,118 @@
+[gd_scene load_steps=15 format=3 uid="uid://dgnd6wktw45tp"]
+
+[ext_resource type="PackedScene" uid="uid://u56jqltoys45" path="res://Scenes/trebu_sat.tscn" id="1_2uo7i"]
+[ext_resource type="Script" path="res://Scripts/sol_body_orbit.cs" id="1_ocmo0"]
+[ext_resource type="PackedScene" uid="uid://77hb8f68tswc" path="res://Scenes/marker.tscn" id="2_kiago"]
+[ext_resource type="PackedScene" uid="uid://btrfdcvocw8s5" path="res://Scenes/movement_camera.tscn" id="4_qdjeb"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yi8yq"]
+seamless = true
+as_normal_map = true
+
+[sub_resource type="Environment" id="Environment_y6q1d"]
+background_mode = 1
+tonemap_mode = 2
+glow_enabled = true
+glow_map = SubResource("NoiseTexture2D_yi8yq")
+
+[sub_resource type="Gradient" id="Gradient_ojiit"]
+offsets = PackedFloat32Array(0.263889, 0.916667)
+colors = PackedColorArray(0, 0, 0, 1, 0.935991, 0.916777, 0.859993, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nq84r"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ponx7"]
+seamless = true
+as_normal_map = true
+color_ramp = SubResource("Gradient_ojiit")
+noise = SubResource("FastNoiseLite_nq84r")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_doufd"]
+seamless = true
+as_normal_map = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ghwf0"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8kjk2"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_ghwf0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4einr"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(0.827451, 0.827451, 0.803922, 0.419608)
+roughness_texture = SubResource("NoiseTexture2D_8kjk2")
+emission_enabled = true
+emission = Color(0.988235, 0.988235, 0.988235, 1)
+emission_energy_multiplier = 3.5
+emission_texture = SubResource("NoiseTexture2D_ponx7")
+refraction_enabled = true
+refraction_texture = SubResource("NoiseTexture2D_doufd")
+disable_receive_shadows = true
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_egk2e"]
+material = SubResource("StandardMaterial3D_4einr")
+
+[node name="SolBodyOrbit" type="Node3D"]
+script = ExtResource("1_ocmo0")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_y6q1d")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 49.5)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment/DirectionalLight3D"]
+mesh = SubResource("SphereMesh_egk2e")
+
+[node name="TrebuSat" parent="." instance=ExtResource("1_2uo7i")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 17.5, 20.875)
+visible = false
+
+[node name="EntryFlightPath" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 64)
+
+[node name="Marker" parent="EntryFlightPath" groups=["EntryMarkers"] instance=ExtResource("2_kiago")]
+transform = Transform3D(-0.5, 0.707107, 0.5, 0.707107, -8.42044e-08, 0.707107, 0.5, 0.707107, -0.5, 0, 0, 0)
+
+[node name="Marker2" parent="EntryFlightPath" groups=["EntryMarkers"] instance=ExtResource("2_kiago")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -8)
+LocalIndex = 1
+
+[node name="Marker3" parent="EntryFlightPath" groups=["EntryMarkers"] instance=ExtResource("2_kiago")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -14)
+LocalIndex = 2
+
+[node name="Marker4" parent="EntryFlightPath" groups=["EntryMarkers"] instance=ExtResource("2_kiago")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -22)
+LocalIndex = 3
+
+[node name="Marker5" parent="EntryFlightPath" groups=["EntryMarkers"] instance=ExtResource("2_kiago")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -30)
+LocalIndex = 4
+
+[node name="Marker6" parent="EntryFlightPath" groups=["EntryMarkers"] instance=ExtResource("2_kiago")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, -39)
+LocalIndex = 5
+
+[node name="Marker7" parent="EntryFlightPath" groups=["EntryMarkers"] instance=ExtResource("2_kiago")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 0, -46)
+LocalIndex = 6
+
+[node name="Marker8" parent="EntryFlightPath" groups=["EntryMarkers"] instance=ExtResource("2_kiago")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -54)
+LocalIndex = 7
+
+[node name="Marker9" parent="EntryFlightPath" groups=["LaunchPoint"] instance=ExtResource("2_kiago")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.6976, 6, -61.75)
+LocalIndex = 8
+
+[node name="CameraBody" parent="." instance=ExtResource("4_qdjeb")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 8, 0, 32)
