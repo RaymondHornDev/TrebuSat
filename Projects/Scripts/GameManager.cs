@@ -29,6 +29,8 @@ public partial class GameManager : Node
 
  	#Reference to the current active scene
 	public Node3D currentScene;
+
+ 	#Reference to the TrebuSat
 	public trebu_sat trebu_Sat;
 
 	public Camera3D movementCam;
