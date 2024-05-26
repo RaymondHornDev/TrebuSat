@@ -11,6 +11,8 @@ public partial class GameManager : Node
 
  	#Reference to the PlayerBase Node
 	public Node PlayerBase;
+
+ 	#Refernce to the MenuBase node
 	public Node MenuBase;
 	public StaticBody3D otv;
 	public StaticBody3D ltv;
