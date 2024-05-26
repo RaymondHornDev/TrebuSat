@@ -23,6 +23,8 @@ public partial class GameManager : Node
 
  	#Reference to the Particles3D used a rocket thrust currently in the Tree
 	public GpuParticles3D RocketThrusts;
+
+ 	#Reference to the OTV crew capsule currently in the Tree
 	public Node3D capsule;
 
 	public Node3D currentScene;
