@@ -6,6 +6,7 @@ public partial class GameManager : Node
 	#Static instance of GameManager that's universally accessable
 	public static GameManager Instance;
 
+ 	#Reference to the ScenBase node
 	public Node SceneBase;
 	public Node PlayerBase;
 	public Node MenuBase;
