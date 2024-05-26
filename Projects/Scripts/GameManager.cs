@@ -20,6 +20,8 @@ public partial class GameManager : Node
 
  	#Reference to the Lunar Transfer Vehicle currently in the Tree
 	public StaticBody3D ltv;
+
+ 	#Reference to the Particles3D used a rocket thrust currently in the Tree
 	public GpuParticles3D RocketThrusts;
 	public Node3D capsule;
 
