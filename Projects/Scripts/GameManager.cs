@@ -14,6 +14,8 @@ public partial class GameManager : Node
 
  	#Refernce to the MenuBase node
 	public Node MenuBase;
+
+ 	#reference to the Orbital Transfer Vehicle current in the Tree
 	public StaticBody3D otv;
 	public StaticBody3D ltv;
 	public GpuParticles3D RocketThrusts;
