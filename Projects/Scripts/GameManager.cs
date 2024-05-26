@@ -39,6 +39,7 @@ public partial class GameManager : Node
     public override void _Ready()
     {
         base._Ready();
+		#If it aint set it. If it is empty everything and try again
 		if(Instance == null)
 		{
 			Instance = this;
