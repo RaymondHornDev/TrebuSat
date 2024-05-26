@@ -8,6 +8,8 @@ public partial class GameManager : Node
 
  	#Reference to the ScenBase node
 	public Node SceneBase;
+
+ 	#Reference to the PlayerBase Node
 	public Node PlayerBase;
 	public Node MenuBase;
 	public StaticBody3D otv;
