@@ -33,6 +33,7 @@ public partial class GameManager : Node
  	#Reference to the TrebuSat
 	public trebu_sat trebu_Sat;
 
+	#Reference to the Kinematicbody conatining the camera near the TrebuSat
 	public Camera3D movementCam;
 
     public override void _Ready()
