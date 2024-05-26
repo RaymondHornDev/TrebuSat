@@ -27,6 +27,7 @@ public partial class GameManager : Node
  	#Reference to the OTV crew capsule currently in the Tree
 	public Node3D capsule;
 
+ 	#Reference to the current active scene
 	public Node3D currentScene;
 	public trebu_sat trebu_Sat;
 
