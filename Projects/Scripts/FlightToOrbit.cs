@@ -17,6 +17,8 @@ public partial class FlightToOrbit : Node3D
 
  	# Reference to a reloaded OTV scene
 	private PackedScene OTV;
+
+ 	# Reference to the OTV object active in the Tree
 	private Node3D otv;
 	private RayCast3D ray;
 	
