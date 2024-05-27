@@ -14,6 +14,8 @@ public partial class FlightToOrbit : Node3D
 
 	# Reference to the OTV spawn point
 	private Marker3D spawnPoint;
+
+ 	# Reference to a reloaded OTV scene
 	private PackedScene OTV;
 	private Node3D otv;
 	private RayCast3D ray;
