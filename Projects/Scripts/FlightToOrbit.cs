@@ -8,6 +8,8 @@ public partial class FlightToOrbit : Node3D
 {
 	# Boolean value indicating the start of the process method
 	private bool levelStarting = true;
+
+ 	# Boolean value indicating the possesion of a flight path
 	private bool hasPath = false;
 
 	private Marker3D spawnPoint;
