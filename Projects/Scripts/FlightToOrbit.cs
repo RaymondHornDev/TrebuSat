@@ -23,7 +23,8 @@ public partial class FlightToOrbit : Node3D
 
  	# Reference to the RayCast Object
 	private RayCast3D ray;
-	
+
+ 	# Integer value of the currently targeted flight marker
 	private int targetIndex = 0;
 	private int targetIndexLimit = 3;
 	private Vector3 targetPos;
