@@ -12,6 +12,7 @@ public partial class FlightToOrbit : Node3D
  	# Boolean value indicating the possesion of a flight path
 	private bool hasPath = false;
 
+	# Reference to the OTV spawn point
 	private Marker3D spawnPoint;
 	private PackedScene OTV;
 	private Node3D otv;
