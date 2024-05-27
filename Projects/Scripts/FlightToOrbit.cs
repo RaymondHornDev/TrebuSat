@@ -20,6 +20,8 @@ public partial class FlightToOrbit : Node3D
 
  	# Reference to the OTV object active in the Tree
 	private Node3D otv;
+
+ 	# Reference to the RayCast Object
 	private RayCast3D ray;
 	
 	private int targetIndex = 0;
