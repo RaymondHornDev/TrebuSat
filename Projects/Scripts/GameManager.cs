@@ -36,9 +36,10 @@ public partial class GameManager : Node
 	#Reference to the Kinematicbody conatining the camera near the TrebuSat
 	public Camera3D movementCam;
 
-    public override void _Ready()
-    {
-        base._Ready();
+
+    	public override void _Ready()
+    	{
+        	base._Ready();
 		#If it aint set it. If it is empty everything and try again
 		if(Instance == null)
 		{
@@ -49,7 +50,7 @@ public partial class GameManager : Node
 		{
 			QueueFree();
 		}
-    }
+    	}
 
 	public void ChangeScene(PackedScene passeScene)
 	{
