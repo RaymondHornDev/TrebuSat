@@ -9,7 +9,7 @@ public partial class GameManager : Node
  	//Reference to the ScenBase node
 	public Node SceneBase;
 
- 	#Reference to the PlayerBase Node
+ 	//Reference to the PlayerBase Node
 	public Node PlayerBase;
 
  	#Refernce to the MenuBase node
