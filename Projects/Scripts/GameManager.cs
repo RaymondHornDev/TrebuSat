@@ -3,7 +3,7 @@ using System;
 
 public partial class GameManager : Node
 {
-	#Static instance of GameManager that's universally accessable
+	//Static instance of GameManager that's universally accessable
 	public static GameManager Instance;
 
  	#Reference to the ScenBase node
