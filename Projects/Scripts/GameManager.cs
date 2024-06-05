@@ -12,7 +12,7 @@ public partial class GameManager : Node
  	//Reference to the PlayerBase Node
 	public Node PlayerBase;
 
- 	#Refernce to the MenuBase node
+ 	//Refernce to the MenuBase node
 	public Node MenuBase;
 
  	#reference to the Orbital Transfer Vehicle current in the Tree
