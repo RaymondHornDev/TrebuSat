@@ -36,7 +36,7 @@ public partial class GameManager : Node
 	#Reference to the Kinematicbody conatining the camera near the TrebuSat
 	public Camera3D movementCam;
 
-
+	//  Method called once object begins becomes referencable
     	public override void _Ready()
     	{
         	base._Ready();
