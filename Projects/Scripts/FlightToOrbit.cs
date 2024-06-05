@@ -6,25 +6,25 @@ using System.Linq;
 
 public partial class FlightToOrbit : Node3D
 {
-	# Boolean value indicating the start of the process method
+	// Boolean value indicating the start of the process method
 	private bool levelStarting = true;
 
- 	# Boolean value indicating the possesion of a flight path
+ 	// Boolean value indicating the possesion of a flight path
 	private bool hasPath = false;
 
-	# Reference to the OTV spawn point
+	// Reference to the OTV spawn point
 	private Marker3D spawnPoint;
 
- 	# Reference to a reloaded OTV scene
+ 	// Reference to a reloaded OTV scene
 	private PackedScene OTV;
 
- 	# Reference to the OTV object active in the Tree
+ 	// Reference to the OTV object active in the Tree
 	private Node3D otv;
 
- 	# Reference to the RayCast Object
+ 	// Reference to the RayCast Object
 	private RayCast3D ray;
 
- 	# Integer value of the currently targeted flight marker
+ 	// Integer value of the currently targeted flight marker
 	private int targetIndex = 0;
 	private int targetIndexLimit = 3;
 	private Vector3 targetPos;
