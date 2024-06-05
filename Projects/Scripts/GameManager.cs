@@ -15,7 +15,7 @@ public partial class GameManager : Node
  	//Refernce to the MenuBase node
 	public Node MenuBase;
 
- 	#reference to the Orbital Transfer Vehicle current in the Tree
+ 	//reference to the Orbital Transfer Vehicle current in the Tree
 	public StaticBody3D otv;
 
  	#Reference to the Lunar Transfer Vehicle currently in the Tree
