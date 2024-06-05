@@ -27,20 +27,20 @@ public partial class GameManager : Node
  	//Reference to the OTV crew capsule currently in the Tree
 	public Node3D capsule;
 
- 	#Reference to the current active scene
+ 	//Reference to the current active scene
 	public Node3D currentScene;
 
- 	#Reference to the TrebuSat
+ 	//Reference to the TrebuSat
 	public trebu_sat trebu_Sat;
 
-	#Reference to the Kinematicbody conatining the camera near the TrebuSat
+	//Reference to the Kinematicbody conatining the camera near the TrebuSat
 	public Camera3D movementCam;
 
 	//  Method called once object begins becomes referencable
     	public override void _Ready()
     	{
         	base._Ready();
-		#If it aint set it. If it is empty everything and try again
+		//If it aint set it. If it is empty everything and try again
 		if(Instance == null)
 		{
 			Instance = this;
