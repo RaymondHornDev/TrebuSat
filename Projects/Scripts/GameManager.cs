@@ -54,6 +54,7 @@ public partial class GameManager : Node
 
 	public void ChangeScene(PackedScene passeScene)
 	{
+ 		// Tests if the reference to SceneBase is set
 		if(SceneBase != null)
 		{
 			foreach(var item in Instance.SceneBase.GetChildren())
