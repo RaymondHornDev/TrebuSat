@@ -57,6 +57,7 @@ public partial class GameManager : Node
  		// Tests if the reference to SceneBase is set
 		if(SceneBase != null)
 		{
+  			// Cycles through each node in SceneBase
 			foreach(var item in Instance.SceneBase.GetChildren())
 			{
 				item.QueueFree();
