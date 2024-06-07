@@ -64,6 +64,7 @@ public partial class GameManager : Node
 				item.QueueFree();
 			}
 		}
+  		// Instantiates the passedScene adds it to the SceneBase
 		SceneBase.AddChild(passeScene.Instantiate());
 	}
 }
