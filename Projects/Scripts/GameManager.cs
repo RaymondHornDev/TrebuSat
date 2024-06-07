@@ -60,6 +60,7 @@ public partial class GameManager : Node
   			// Cycles through each node in SceneBase
 			foreach(var item in Instance.SceneBase.GetChildren())
 			{
+   				// Removes each node in SceneBase from the GameTree
 				item.QueueFree();
 			}
 		}
