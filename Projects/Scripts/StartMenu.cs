@@ -3,6 +3,7 @@ using System;
 
 public partial class StartMenu : Control
 {
+	// Reference to the startMenu
 	public static PanelContainer startMenu;
 	public static PanelContainer infoMenu;
 
