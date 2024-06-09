@@ -8,6 +8,7 @@ public partial class trebu_sat : Node3D
 	[Export]
 	public int rotationSpeed = 2;
 
+	// Boolean to turn rotation on and off
 	public bool isRotating = true;
 
 	private Node3D launcher;
