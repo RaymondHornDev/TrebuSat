@@ -14,8 +14,10 @@ public partial class trebu_sat : Node3D
 	// Rotating arm
 	private Node3D launcher;
 
- 	// Circular rotating part
+ 	// Circular rotating mesh
 	private Node3D counterWeights;
+
+ 	// Guide for LTV
 	public SpringArm3D springArm;
 
 	// Called when the node enters the scene tree for the first time.
