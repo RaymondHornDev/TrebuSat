@@ -4,6 +4,7 @@ using System;
 public partial class trebu_sat : Node3D
 {
 
+	// Rotation speed kicked to the inspector
 	[Export]
 	public int rotationSpeed = 2;
 
