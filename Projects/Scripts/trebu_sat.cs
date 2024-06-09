@@ -11,6 +11,7 @@ public partial class trebu_sat : Node3D
 	// Boolean to turn rotation on and off
 	public bool isRotating = true;
 
+	// Rotating arm
 	private Node3D launcher;
 	private Node3D counterWeights;
 	public SpringArm3D springArm;
