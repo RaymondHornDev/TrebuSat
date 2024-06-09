@@ -13,6 +13,8 @@ public partial class trebu_sat : Node3D
 
 	// Rotating arm
 	private Node3D launcher;
+
+ 	// Circular rotating part
 	private Node3D counterWeights;
 	public SpringArm3D springArm;
 
