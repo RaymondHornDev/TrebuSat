@@ -23,7 +23,7 @@ public partial class trebu_sat : Node3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
- 		// Since OnReady can't be used with C#
+ 		// Since OnReady can't be used with C# object references are below
 		launcher = GetNode<Node3D>("Launcher");
 		counterWeights = GetNode<Node3D>("CounterWeights");
 		springArm = GetNode<SpringArm3D>("Launcher/SpringArm3D");
