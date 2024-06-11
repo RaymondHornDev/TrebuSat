@@ -44,6 +44,7 @@ public partial class trebu_sat : Node3D
 		}
 	}
 
+	// Method to rotate moving parts
 	private void RotatingParts(double delta)
 	{
 		launcher.RotateY(rotationSpeed * (float)delta);
