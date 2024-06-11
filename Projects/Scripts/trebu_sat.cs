@@ -47,6 +47,7 @@ public partial class trebu_sat : Node3D
 	// Method to rotate moving parts
 	private void RotatingParts(double delta)
 	{
+ 		// Rotates launcher arm
 		launcher.RotateY(rotationSpeed * (float)delta);
 		counterWeights.RotateY(-rotationSpeed * (float)delta);
 	}
