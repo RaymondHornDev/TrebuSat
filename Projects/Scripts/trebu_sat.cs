@@ -37,6 +37,7 @@ public partial class trebu_sat : Node3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+ 		// Checks isRotating bool to activate module rotation
 		if(isRotating == true)
 		{
 			RotatingParts(delta);
