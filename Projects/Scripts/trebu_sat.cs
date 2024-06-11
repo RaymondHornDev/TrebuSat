@@ -49,6 +49,7 @@ public partial class trebu_sat : Node3D
 	{
  		// Rotates launcher arm
 		launcher.RotateY(rotationSpeed * (float)delta);
+  		// Rotates the counterWeights module
 		counterWeights.RotateY(-rotationSpeed * (float)delta);
 	}
 }
