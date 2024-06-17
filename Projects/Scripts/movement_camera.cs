@@ -12,6 +12,8 @@ public partial class movement_camera : CharacterBody3D
 
 	[Export]
 	public float Speed = 5.0f;
+
+ 	// Boolean for activating follow camera movement
 	public bool tracking = false;
 	public bool canMove = false;
 	//public const float JumpVelocity = 4.5f;
