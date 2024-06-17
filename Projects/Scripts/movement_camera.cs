@@ -4,6 +4,7 @@ using System;
 public partial class movement_camera : CharacterBody3D
 {
 
+	// Creates a Vec3 at (0, 0, 0)
 	public Vector3 targetLocation = new Vector3(0, 0, 0);
 	public Camera3D cam;
 
