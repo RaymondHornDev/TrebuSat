@@ -13,6 +13,7 @@ public partial class StartMenu : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+ 		// Initilizes reference to the Start Menu
 		startMenu = GetNode<PanelContainer>("CanvasLayer/SMPanelContainer");
 		infoMenu = GetNode<PanelContainer>("CanvasLayer/IMPanelContainer");
 	}
