@@ -15,6 +15,8 @@ public partial class StartMenu : Control
 	{
  		// Initilizes reference to the Start Menu
 		startMenu = GetNode<PanelContainer>("CanvasLayer/SMPanelContainer");
+
+  		// Initilizes reference to the Info Menu
 		infoMenu = GetNode<PanelContainer>("CanvasLayer/IMPanelContainer");
 	}
 
