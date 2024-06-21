@@ -20,6 +20,7 @@ public partial class StartMenu : Control
 	{
 	}
 
+	// Signal triggered when the start button is pressed
 	public static void OnButtonPressed()
 	{
 		/* Start menu button */
