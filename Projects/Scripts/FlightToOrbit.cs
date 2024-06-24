@@ -1,4 +1,4 @@
-/* Rubba dubba dub dub. Just showing activity. Turn green baby */
+/* Rubba dubba dub dub. Just showing activity. Turn green baby. GREEN */
 
 using Godot;
 using System;
