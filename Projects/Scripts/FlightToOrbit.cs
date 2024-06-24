@@ -1,4 +1,4 @@
-/* Rubba dubba dub dub */
+/* Rubba dubba dub dub. Just showing activity */
 
 using Godot;
 using System;
