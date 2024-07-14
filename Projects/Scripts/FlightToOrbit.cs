@@ -1,5 +1,4 @@
 /* Just a comment */
-/* Just a comment */
 using Godot;
 using System;
 using System.Collections.Generic;
