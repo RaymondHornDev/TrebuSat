@@ -1,4 +1,3 @@
-/* Just a comment */
 using Godot;
 using System;
 using System.Collections.Generic;
