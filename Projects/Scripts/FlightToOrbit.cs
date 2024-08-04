@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-//Boo ya!
 
 public partial class FlightToOrbit : Node3D
 {
