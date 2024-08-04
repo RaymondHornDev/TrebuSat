@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-
-
 public partial class FlightToOrbit : Node3D
 {
 	// Boolean value indicating the start of the process method
