@@ -2,7 +2,6 @@ using Godot;
 using System;
 
 
-
 public partial class Marker : Marker3D
 {
 	[Export]
